@@ -1,0 +1,11 @@
+# Power BI project files are excluded until sharing and attribution are approved.
+*.pbix
+
+# Power BI temporary and lock files
+~$*
+*.tmp
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+desktop.ini
