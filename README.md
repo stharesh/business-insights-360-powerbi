@@ -2,7 +2,7 @@
 
 An end-to-end business intelligence portfolio project designed to connect finance, sales, marketing, supply chain, forecasting, and executive decision-making in one Power BI experience.
 
-> **Project status:** Phase 5 — semantic model documentation. The project is being published in reviewed phases; screenshots and additional supporting evidence will be added only after each phase is approved.
+> **Project status:** Review candidate — all documentation phases are consolidated. Visual evidence, field-level metadata, and attribution remain explicit final-review gates.
 
 ## Project overview
 
@@ -28,9 +28,9 @@ The report uses a shared KPI framework so the same business definitions remain c
 | Forecast Accuracy | Measure the magnitude of forecast error |
 | Market Share | Compare competitive position across markets and periods |
 
-Detailed definitions and calculation context are being added incrementally in the supporting documentation.
+Detailed definitions and calculation context are available in the supporting documentation.
 
-## Planned report views
+## Report views
 
 | View | Primary analytical focus |
 | --- | --- |
@@ -60,6 +60,29 @@ The approved model inventory contains:
 
 The model is organized around shared date, customer, product, and market dimensions, with fact and input tables supporting actuals, forecasts, cost allocation, profitability, targets, and competitive analysis.
 
+## Evidence status
+
+| Evidence | Status | Review location |
+| --- | --- | --- |
+| Business decision framework | Documented | [Business overview](docs/business-overview.md) |
+| Selected DAX patterns | Documented with confirmed expressions | [Analytical logic patterns](docs/dax-highlights.md) |
+| Performance workflow | Documented with observed timings | [Performance analysis](docs/performance-optimization.md) |
+| Logical semantic model | Documented | [Semantic model](docs/semantic-model.md) |
+| Field-level model inventory | Partially validated; direct export required | [Model inventory](docs/model-inventory.md) |
+| Dashboard screenshots | Pending validated captures | [Evidence manifest](assets/README.md) |
+| Model and diagnostic screenshots | Pending validated captures | [Evidence manifest](assets/README.md) |
+| Attribution and sharing rights | Pending confirmation | [Final review checklist](docs/final-review-checklist.md) |
+
+## Skills demonstrated
+
+- Translating cross-functional business questions into an analytical reporting structure
+- Financial modeling from Gross Sales through Net Profit
+- DAX design for dynamic P&L reporting and benchmark switching
+- Forecast Accuracy and directional inventory-risk analysis
+- Semantic modeling across actuals, forecasts, costs, targets, and market share
+- Report-performance investigation using Power BI Performance Analyzer and DAX Studio
+- Evidence-aware technical documentation that separates observations from unverified claims
+
 ## Repository structure
 
 ```text
@@ -67,13 +90,15 @@ business-insights-360-powerbi/
 ├── README.md
 ├── .gitignore
 ├── assets/
-│   ├── dashboards/
-│   ├── model/
-│   ├── navigation/
-│   └── performance/
+│   ├── README.md
+│   ├── dashboards/README.md
+│   ├── model/README.md
+│   ├── navigation/README.md
+│   └── performance/README.md
 └── docs/
     ├── business-overview.md
     ├── dax-highlights.md
+    ├── final-review-checklist.md
     ├── model-inventory.md
     ├── performance-optimization.md
     └── semantic-model.md
@@ -86,14 +111,17 @@ business-insights-360-powerbi/
 - [DAX highlights](docs/dax-highlights.md) — selected analytical logic patterns
 - [Performance optimization](docs/performance-optimization.md) — diagnostic workflow and evidence
 - [Model inventory](docs/model-inventory.md) — detailed tables, columns, measures, and relationships
+- [Evidence manifest](assets/README.md) — required screenshots and capture standards
+- [Final review checklist](docs/final-review-checklist.md) — evidence, metadata, attribution, and publication gates
 
 ## Publication notes
 
 - The Power BI `.pbix` file is intentionally excluded while data-sharing and attribution requirements are reviewed.
+- Dashboard, model, navigation, and diagnostic screenshots are not included until validated captures are available.
 - This repository will not claim a quantified performance improvement unless a controlled before-and-after benchmark is documented.
-- Attribution will be finalized before the related source materials or implementation details are published.
+- The original source of the Business Insights 360 / AtliQ case study must be confirmed before attribution is finalized.
 - No license has been added at this stage.
 
-## Current phase
+## Review status
 
-Phase 1 established the repository and approved documentation structure. Phase 2 documented the selected analytical logic patterns, Phase 3 recorded the performance-diagnostic workflow, and Phase 4 defined the business decision framework. Phase 5 documents the semantic model's logical architecture, shared dimensions, analytical facts, supporting inputs, and measure layer. Validated screenshots and the complete field-level model inventory remain reserved for later review phases.
+The documentation phases are consolidated into this review candidate. Before final submission, complete the remaining evidence, metadata, attribution, and sharing-rights checks in the [final review checklist](docs/final-review-checklist.md). Missing evidence is labeled directly rather than replaced with mockups or inferred technical details.
