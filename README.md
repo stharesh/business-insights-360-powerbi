@@ -170,8 +170,8 @@ business-insights-360-powerbi/
 - [DAX highlights](docs/dax-highlights.md) — profitability, forecasting, risk, and benchmark logic
 - [Performance optimization](docs/performance-optimization.md) — Performance Analyzer and DAX Studio workflow
 
-## Attribution
+## Project context
 
-Business Insights 360 is based on the AtliQ Hardware case study from the [Codebasics Power BI Data Analytics course](https://codebasics.io/courses/power-bi-data-analysis-with-end-to-end-project), created by Dhaval Patel and Hemanand Vadivel. This repository presents my portfolio implementation and technical documentation developed through that case study.
+AtliQ Hardware is a fictional business case used to demonstrate cross-functional analytics. This repository documents my Power BI implementation, including semantic modeling, DAX measures, report functionality, analytical reasoning, and performance analysis.
 
-The Power BI `.pbix` file and course dataset are not distributed in this repository.
+The Power BI `.pbix` file and source dataset are not distributed in this repository.
