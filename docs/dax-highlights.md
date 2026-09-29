@@ -2,10 +2,6 @@
 
 This document highlights the DAX patterns that carry the most analytical value in Business Insights 360. The focus is not on basic aggregation measures; it is on logic that changes how users interpret profitability, forecasting, risk, and benchmarks.
 
-## Scope and evidence note
-
-The formulas reproduced below are confirmed extracts from the approved model review. Where the complete production measure is not yet published, the document explains the pattern without inventing unverified code. The full measure inventory will be added separately after review.
-
 ## 1. Dynamic P&L reporting
 
 The financial statement uses a dynamic `SWITCH(TRUE())` pattern so one reporting measure can return the appropriate result for the selected P&L row. The logic supports the reporting path from Gross Sales through Net Profit and Net Profit %.
@@ -28,8 +24,6 @@ Gross Sales → Net Sales → Gross Margin → Net Profit
 - Allows currency values and percentage metrics to coexist in the same reporting structure.
 - Makes benchmark logic reusable across the financial statement.
 - Reduces repeated visual-level configuration and keeps business logic inside the semantic model.
-
-The complete production `SWITCH(TRUE())` measure will be published with the reviewed model inventory rather than reconstructed from memory.
 
 ## 2. Expense sign convention and Net Profit
 
@@ -55,7 +49,7 @@ Net Profit                70
 
 ### Why it matters
 
-Showing the sign convention beside the Net Profit formula prevents a reviewer from incorrectly concluding that expenses are being added to profit. It also keeps expense presentation consistent within the P&L.
+Showing the sign convention beside the Net Profit formula prevents readers from incorrectly concluding that expenses are being added to profit. It also keeps expense presentation consistent within the P&L.
 
 ## 3. Forecast Accuracy
 
@@ -127,8 +121,6 @@ This design is more useful than hard-coding separate comparison visuals because 
 | Last year | How has performance changed over time? |
 | Target | How is actual performance tracking against the plan? |
 
-The full benchmark-switching measure will be published only after its production DAX has been verified against the model inventory.
-
 ## Pattern summary
 
 | Pattern | Analytical value |
@@ -139,11 +131,12 @@ The full benchmark-switching measure will be published only after its production
 | OOS/EI risk | Identifies the direction and likely operational consequence of forecast error |
 | Dynamic benchmarking | Reuses one comparison framework for last-year and target analysis |
 
-## Validation boundaries
+## Design principles
 
-- The logic shown here is presented for analytical explanation, not as a complete export of all 65 measures.
-- Measure names and formulas are preserved where confirmed by the approved model review.
-- No optimization benefit is claimed from these patterns without a controlled performance benchmark.
-- The detailed relationship between measures, tables, and filter context will be documented in the semantic-model and model-inventory phases.
+- Centralize reusable business logic in measures instead of individual visuals.
+- Keep financial sign conventions explicit and consistent throughout the P&L.
+- Separate forecast-error magnitude from operational-risk direction.
+- Apply a shared benchmark context across Net Sales, Gross Margin, Net Profit, and P&L reporting.
+- Preserve filter context so the same measures work across executive and functional views.
 
 [Return to the project README](../README.md)

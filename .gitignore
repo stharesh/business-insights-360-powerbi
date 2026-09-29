@@ -1,4 +1,4 @@
-# Power BI project files are excluded until sharing and attribution are approved.
+# Power BI Desktop project files are excluded from version control.
 *.pbix
 
 # Power BI temporary and lock files

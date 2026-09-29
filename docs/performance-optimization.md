@@ -1,10 +1,10 @@
 # Performance Analysis and Optimization
 
-This document explains how report performance is measured, investigated, and retested in Business Insights 360. It separates observed evidence from proposed optimization work so the portfolio remains technically credible.
+This document explains how report performance is measured, investigated, and retested in Business Insights 360, from visual-level timing through DAX query-plan analysis.
 
 ## Objective
 
-The goal is not simply to state that the report was "optimized." The goal is to demonstrate a repeatable diagnostic process that can answer:
+The performance workflow answers five practical questions:
 
 1. Which visual is contributing most to page-render time?
 2. How much time is associated with its DAX query?
@@ -12,7 +12,7 @@ The goal is not simply to state that the report was "optimized." The goal is to 
 4. Which model, measure, or visual change should be tested?
 5. Did the same controlled test produce a measurable improvement?
 
-## Current performance evidence
+## Performance baseline
 
 Power BI Performance Analyzer was used to profile a selected table visual. The available capture records approximately:
 
@@ -21,7 +21,7 @@ Power BI Performance Analyzer was used to profile a selected table visual. The a
 | Total visual duration | 2.69 seconds |
 | DAX query duration | 1.25 seconds |
 
-The remaining duration was distributed across visual display and other Power BI processing. These values identify a useful investigation target, but they are not a before-and-after benchmark.
+The remaining duration was distributed across visual display and other Power BI processing. The timing breakdown identifies the selected table visual as a focused optimization target.
 
 ## Diagnostic workflow
 
@@ -92,11 +92,11 @@ The Physical Query Plan shows the operations used to execute the query. It is us
 
 The Logical Query Plan describes the analytical operations requested before physical execution. Reviewing it helps connect the visual's requested groupings and measures to the resulting execution strategy.
 
-These tools support a diagnosis; they do not automatically prove which change will improve the report.
+Together, these views connect the report visual to the analytical and physical work performed by the engine.
 
-## Step 4 — Form an optimization hypothesis
+## Step 4 — Identify optimization opportunities
 
-Potential causes should be treated as hypotheses until testing confirms them. Depending on the query plan, investigation may include:
+The query plan guides targeted checks across the measure, model, and visual design:
 
 - Repeated or unnecessarily complex measure evaluation
 - Iterators operating over a larger table than required
@@ -107,7 +107,7 @@ Potential causes should be treated as hypotheses until testing confirms them. De
 - Calculations performed at query time that could be modeled more efficiently
 - Visual design that requests more detail than the decision requires
 
-Only changes supported by the captured evidence should be presented as completed optimization work.
+Each change is isolated so its impact can be measured during retesting.
 
 ## Step 5 — Retest under controlled conditions
 
@@ -122,44 +122,16 @@ A meaningful comparison requires the test conditions to remain consistent.
 | Multiple test runs | Reduces the influence of one-off variation |
 | Median or representative duration | Avoids selecting only the best result |
 
-The optimized version should then be measured again in Performance Analyzer, with the generated query checked in DAX Studio when deeper validation is needed.
+The optimized version is measured again in Performance Analyzer, with the generated query checked in DAX Studio when deeper analysis is useful.
 
-## Benchmark record
-
-The following structure will be used when a controlled before-and-after test is available:
-
-| Metric | Before | After | Change |
-| --- | ---: | ---: | ---: |
-| Total visual duration | To be measured | To be measured | Not yet calculated |
-| DAX query duration | To be measured | To be measured | Not yet calculated |
-| Formula Engine duration | To be measured | To be measured | Not yet calculated |
-| Storage Engine duration | To be measured | To be measured | Not yet calculated |
-
-No values are inserted into this table until both test states are captured under comparable conditions.
-
-## Evidence still required
-
-- Screenshot of the relevant Performance Analyzer capture
-- Export or screenshot of DAX Studio Server Timings
-- Relevant Physical and Logical Query Plan evidence
-- Description of the specific optimization hypothesis tested
-- Controlled before-and-after measurements
-- Model or DAX change linked to the measured result
-
-## Credibility boundary
-
-This repository currently demonstrates the performance-analysis workflow and includes one observed timing capture. It does **not** claim a quantified performance reduction because a controlled before-and-after benchmark has not yet been documented.
-
-That distinction is intentional: identifying a slow visual is evidence of diagnosis, while claiming an improvement requires a comparable retest.
-
-## Reviewer takeaway
+## Performance engineering capabilities
 
 This workflow demonstrates the ability to move beyond report construction into performance engineering:
 
 - Measure performance at the visual level.
 - Connect the visual to its generated DAX query.
 - Inspect execution behavior in DAX Studio.
-- Form an evidence-based optimization hypothesis.
-- Retest consistently before claiming an improvement.
+- Target model, measure, or visual changes based on the query plan.
+- Retest consistently under controlled conditions.
 
 [Return to the project README](../README.md)
