@@ -2,6 +2,8 @@
 
 An end-to-end Power BI business intelligence solution that connects Finance, Sales, Marketing, Supply Chain, and Executive reporting through one analytical model.
 
+![Business Insights 360 report home and navigation](assets/screenshots/report-home.png)
+
 ## What I worked on
 
 I built a cross-functional reporting solution for the AtliQ Hardware business case. The project brings actual sales, forecasts, costs, operational expenses, targets, and market-share data together so decision-makers can move from a high-level KPI to the customer, product, market, or operational driver behind it.
@@ -25,7 +27,16 @@ My work covered:
 | Forecasting | Absolute error, Forecast Accuracy, net error, and OOS/EI risk classification |
 | Benchmarking | Reusable last-year and target comparisons across Net Sales, Gross Margin %, Net Profit %, and P&L reporting |
 | Performance analysis | A selected table visual was profiled at approximately 2.69 seconds total, including a 1.25-second DAX query |
+| Dashboard experience | Home navigation plus dedicated Executive, Finance, Sales, Marketing, and Supply Chain views |
 | Technical documentation | Detailed explanations of the [semantic model](docs/semantic-model.md), [DAX patterns](docs/dax-highlights.md), and [performance workflow](docs/performance-optimization.md) |
+
+## Key business insights — 2022 estimate, Q1
+
+- Net Sales reached **$1.13B** and Gross Margin was **38.09%**, while Net Profit remained negative at **-13.91%**. The result shows why revenue growth must be evaluated alongside operating expenses and final profitability.
+- Forecast Accuracy improved to **81.01%** from **79.48%** last year, but the **-2.36M net error** produced an overall **OOS** risk signal. Higher aggregate accuracy did not eliminate under-forecasting exposure.
+- **APAC generated $607.53M** in Net Sales, the largest regional contribution, while **North America delivered the strongest Gross Margin rate at 45.01%**.
+- **Notebook was the largest product segment**, generating **$472.97M** in Net Sales and **$179.86M** in Gross Margin.
+- The Retailer channel contributed **73.72%** of revenue, compared with **17.08%** from Direct and **9.21%** from Distributor channels.
 
 ## Functionalities implemented
 
@@ -36,12 +47,16 @@ My work covered:
 - Combined Net Sales, profitability, Forecast Accuracy, and Market Share context
 - Supported last-year and target-based performance comparison
 
+![Executive view with cross-functional KPIs, market share, revenue trends, and top performers](assets/screenshots/executive-view.png)
+
 ### Finance analytics
 
 - Structured the P&L from Gross Sales through Net Profit
 - Incorporated pre-invoice and post-invoice deductions
 - Connected manufacturing, freight, and operating-expense inputs to profitability
 - Enabled market, customer, product, and period-level variance analysis
+
+![Finance view with dynamic P&L, KPI cards, benchmark comparison, and Net Sales trend](assets/screenshots/finance-view.png)
 
 ### Sales analytics
 
@@ -50,6 +65,8 @@ My work covered:
 - Supported top and bottom performer investigation
 - Preserved consistent benchmark context across drill-downs
 
+![Sales view with customer metrics, product metrics, performance matrix, and unit economics](assets/screenshots/sales-view.png)
+
 ### Marketing analytics
 
 - Analyzed performance across division, segment, category, product, and geography
@@ -57,12 +74,16 @@ My work covered:
 - Connected product and market performance with Gross Margin and Net Profit
 - Supported portfolio and regional performance analysis
 
+![Marketing view with segment profitability, category and division performance, and regional metrics](assets/screenshots/marketing-view.png)
+
 ### Supply-chain analytics
 
 - Compared actual sales with forecast quantities
 - Calculated absolute forecast error and Forecast Accuracy
 - Used net-error direction to classify potential Out-of-Stock and Excess Inventory risk
 - Enabled customer and product-level forecast investigation
+
+![Supply Chain view with Forecast Accuracy, net error trend, customer metrics, and product risk](assets/screenshots/supply-chain-view.png)
 
 ## Selected DAX proof
 
@@ -159,6 +180,14 @@ This foundation can be applied to industry projects involving revenue and profit
 ```text
 business-insights-360-powerbi/
 ├── README.md
+├── assets/
+│   └── screenshots/
+│       ├── executive-view.png
+│       ├── finance-view.png
+│       ├── marketing-view.png
+│       ├── report-home.png
+│       ├── sales-view.png
+│       └── supply-chain-view.png
 ├── docs/
 │   ├── dax-highlights.md
 │   ├── performance-optimization.md
