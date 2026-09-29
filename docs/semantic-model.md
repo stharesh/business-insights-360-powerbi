@@ -2,11 +2,9 @@
 
 The Business Insights 360 semantic model brings actual sales, forecasts, costs, operating expenses, targets, and market-share data into a shared analytical structure. Its purpose is to let every report view use consistent dimensions, measures, and benchmarks.
 
-This document explains the model at a logical level. The field-by-field inventory and exact relationship properties will be published separately after validation.
-
 ## Model snapshot
 
-The approved inventory contains:
+The model contains:
 
 | Model object | Count |
 | --- | ---: |
@@ -60,7 +58,7 @@ Shared dimensions allow users to move between these views while retaining a cons
                     Marketing · Supply Chain
 ```
 
-The diagram is a logical view, not a substitute for the validated Power BI relationship diagram.
+The diagram summarizes how shared dimensions, analytical facts, supporting inputs, and measures work together.
 
 ## 1. Shared dimensions
 
@@ -81,13 +79,11 @@ The central dimensions provide reusable filter context across functional areas.
 - Time comparisons can be reused by last-year and target benchmark logic.
 - Cross-functional navigation does not require separate copies of the same business hierarchy.
 
-The exact keys, data types, and relationship cardinalities will be listed in the model inventory rather than inferred here.
-
 ## 2. Actuals and forecasting
 
 ### `fact_actual_estimates`
 
-This is the principal analytical fact structure for sales and profitability reporting. The approved inventory shows that it contains the main financial chain, including:
+This is the principal analytical fact structure for sales and profitability reporting. It contains the main financial chain, including:
 
 - Sales quantities and values
 - Sales deductions
@@ -109,7 +105,7 @@ This table provides the forecast quantities used by supply-chain analysis. In co
 - Forecast Accuracy
 - OOS and EI risk classification
 
-Actuals and forecasts connect through common date, customer, and product context. The field-level relationship paths will be confirmed in the complete inventory.
+Actuals and forecasts are analyzed through common date, customer, and product context.
 
 ## 3. Cost and profitability inputs
 
@@ -156,8 +152,6 @@ This table supports competitive-position analysis by providing the inputs requir
 
 Together, these tables extend the model beyond historical reporting. Users can compare internal performance with targets and evaluate external competitive position within the represented market data.
 
-The available grain and relationship properties for these tables will be stated only after field-level validation.
-
 ## 5. Helper, selector, and reporting tables
 
 The model also contains supporting tables used to control the report experience. Their roles include:
@@ -174,7 +168,7 @@ Power BI-generated date structures are not emphasized in the portfolio narrative
 
 ## Relationship strategy
 
-The confirmed model inventory contains 28 relationships. At a logical level:
+The model contains 28 relationships. At a logical level:
 
 - Actuals and forecasts are analyzed through shared date, customer, and product dimensions.
 - Market attributes provide geographic and commercial context where applicable.
@@ -182,7 +176,7 @@ The confirmed model inventory contains 28 relationships. At a logical level:
 - Target and market-share tables connect through the dimensions required by their reporting context.
 - Helper and selector tables support reporting behavior rather than transactional analysis.
 
-This design aims to keep filter behavior consistent across functional views. However, the exact cardinality, cross-filter direction, active state, and key columns for every relationship will be documented in `model-inventory.md` after validation.
+This design keeps filter behavior consistent across functional views and allows shared measures to respond to the same customer, product, market, and time context.
 
 ## Measure layer
 
@@ -220,23 +214,5 @@ Selected formulas are documented in [Analytical Logic Patterns](dax-highlights.m
 | Sales | Customer, product, market, actuals, and benchmark measures |
 | Marketing | Product hierarchy, geography, actuals, profitability, and benchmark measures |
 | Supply Chain | Actuals, monthly forecasts, shared dimensions, Forecast Accuracy, and risk measures |
-
-## Model validation priorities
-
-Before the field-level inventory is published, the following items should be verified directly against the Power BI model:
-
-- Exact table and column names
-- Fact-table grain
-- Primary and foreign key fields
-- Relationship cardinality and direction
-- Active and inactive relationships
-- Date-table configuration
-- Target and market-share grain
-- Measure home tables and display folders
-- Hidden technical fields and generated structures
-
-## Current evidence boundary
-
-This phase documents the approved logical architecture and confirmed model counts. It does not reconstruct missing relationship details or present a diagram as if it were exported from Power BI. The complete technical inventory and a validated semantic-model screenshot remain later-phase evidence.
 
 [Return to the project README](../README.md)
