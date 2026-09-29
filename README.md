@@ -2,7 +2,7 @@
 
 An end-to-end business intelligence portfolio project designed to connect finance, sales, marketing, supply chain, forecasting, and executive decision-making in one Power BI experience.
 
-> **Project status:** Phase 1 — repository foundation. The project is being published in reviewed phases; screenshots, detailed analytical logic, and supporting evidence will be added only after each phase is approved.
+> **Project status:** Phase 2 — analytical logic documentation. The project is being published in reviewed phases; screenshots and supporting evidence will be added only after each phase is approved.
 
 ## Project overview
 
@@ -28,7 +28,7 @@ The report uses a shared KPI framework so the same business definitions remain c
 | Forecast Accuracy | Measure the magnitude of forecast error |
 | Market Share | Compare competitive position across markets and periods |
 
-Detailed definitions and calculation context will be added in the documentation phase.
+Detailed definitions and calculation context are being added incrementally in the supporting documentation.
 
 ## Planned report views
 
@@ -96,4 +96,4 @@ business-insights-360-powerbi/
 
 ## Current phase
 
-Phase 1 establishes the repository, its narrative foundation, and the approved documentation structure. Detailed documentation, validated screenshots, analytical logic, and performance evidence belong to later review phases.
+Phase 1 established the repository, its narrative foundation, and the approved documentation structure. Phase 2 documents the selected analytical logic patterns that best demonstrate the model's DAX design. Validated screenshots, the complete model inventory, and performance evidence remain reserved for later review phases.
