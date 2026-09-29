@@ -2,7 +2,7 @@
 
 An end-to-end business intelligence portfolio project designed to connect finance, sales, marketing, supply chain, forecasting, and executive decision-making in one Power BI experience.
 
-> **Project status:** Phase 2 — analytical logic documentation. The project is being published in reviewed phases; screenshots and supporting evidence will be added only after each phase is approved.
+> **Project status:** Phase 3 — performance analysis documentation. The project is being published in reviewed phases; screenshots and additional supporting evidence will be added only after each phase is approved.
 
 ## Project overview
 
@@ -96,4 +96,4 @@ business-insights-360-powerbi/
 
 ## Current phase
 
-Phase 1 established the repository, its narrative foundation, and the approved documentation structure. Phase 2 documents the selected analytical logic patterns that best demonstrate the model's DAX design. Validated screenshots, the complete model inventory, and performance evidence remain reserved for later review phases.
+Phase 1 established the repository and approved documentation structure. Phase 2 documented the selected analytical logic patterns that best demonstrate the model's DAX design. Phase 3 records the performance-diagnostic workflow and the currently available timing evidence without claiming an unverified improvement. Validated screenshots and the complete model inventory remain reserved for later review phases.
