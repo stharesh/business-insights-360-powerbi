@@ -14,6 +14,7 @@ My work covered:
 - Building a dynamic Profit and Loss statement from Gross Sales to Net Profit
 - Creating Finance, Sales, Marketing, Supply Chain, and Executive analytical views
 - Developing reusable DAX measures for profitability, forecasting, risk, and benchmarking
+- Connecting an AI assistant to Power BI through the Microsoft Power BI Authoring MCP Server for model discovery and DAX authoring
 - Supporting last-year and target comparisons through dynamic benchmark selection
 - Measuring visual performance with Power BI Performance Analyzer
 - Investigating generated DAX queries with DAX Studio
@@ -28,7 +29,24 @@ My work covered:
 | Benchmarking | Reusable last-year and target comparisons across Net Sales, Gross Margin %, Net Profit %, and P&L reporting |
 | Performance analysis | A selected table visual was profiled at approximately 2.69 seconds total, including a 1.25-second DAX query |
 | Dashboard experience | Home navigation plus dedicated Executive, Finance, Sales, Marketing, and Supply Chain views |
+| AI-assisted development | Used the Microsoft Power BI Authoring MCP Server in VS Code to inspect the open semantic model, retrieve DAX definitions, and accelerate measure creation from natural-language requirements |
 | Technical documentation | Detailed explanations of the [semantic model](docs/semantic-model.md), [DAX patterns](docs/dax-highlights.md), and [performance workflow](docs/performance-optimization.md) |
+
+## How I used AI in this project
+
+I connected an AI assistant in VS Code to my open Power BI Desktop project through the **Microsoft Power BI Authoring MCP Server**. This gave the assistant structured access to the semantic-model metadata and enabled a practical AI-assisted development workflow inside the tools I was already using.
+
+![Microsoft Power BI Authoring MCP Server installed in VS Code](assets/screenshots/power-bi-authoring-mcp.png)
+
+I used this workflow to:
+
+- **Explore and document the model:** query the open Power BI project and produce an inventory of **29 tables, 127 columns, 65 measures, and 28 relationships** without manually reviewing every model object
+- **Inspect existing logic:** retrieve measure names and DAX definitions to understand, document, and troubleshoot calculations more quickly
+- **Accelerate DAX authoring:** describe a business calculation in natural language—such as Net Margin—and use the assistant to generate and write the corresponding DAX measure through the connected authoring server
+- **Reduce repetitive work:** automate model discovery and routine measure scaffolding so more time could be spent on business logic, report design, and analytical interpretation
+- **Maintain analytical quality:** validate AI-assisted measures against the intended business definition, filter context, formatting, and report results before using them in the dashboard
+
+This demonstrates more than prompting an AI chatbot: I integrated an AI assistant with the Power BI authoring environment, used model-aware context, and combined automation with human validation. The same approach can support faster semantic-model audits, DAX development, documentation, and maintenance in industry-scale BI projects.
 
 ## Key business insights — 2022 estimate, Q1
 
@@ -185,6 +203,7 @@ business-insights-360-powerbi/
 │       ├── executive-view.png
 │       ├── finance-view.png
 │       ├── marketing-view.png
+│       ├── power-bi-authoring-mcp.png
 │       ├── report-home.png
 │       ├── sales-view.png
 │       └── supply-chain-view.png
